@@ -9,10 +9,14 @@ set backspace=indent,eol,start
 
 set nobackup
 set nowritebackup
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=500		" keep 500 lines of command line history
+set ruler		      " show the cursor position all the time
+set showcmd		    " display incomplete commands
+set incsearch		  " do incremental searching
+set showmatch
+set cursorline
+set cmdheight=2
+set scrolloff=3
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -86,6 +90,9 @@ set expandtab
 
 " Always display the status line
 set laststatus=2
+
+" Status Line
+:set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
 " \ is the leader character
 let mapleader = ","
@@ -178,6 +185,7 @@ let g:snippetsEmu_key = "<S-Tab>"
 
 " Tab completion options
 " (only complete to the longest unambiguous match, and show a menu)
+set wildmenu
 set completeopt=longest,menu
 set wildmode=list:longest,list:full
 set complete=.,t
